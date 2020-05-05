@@ -398,6 +398,28 @@ def lag_plot(series, lag=1, ax=None, **kwds):
     Returns
     -------
     class:`matplotlib.axis.Axes`
+
+    Examples
+    --------
+
+    Lag plots are most commonly used to look for patterns in time series data.
+
+    Given the following time series
+
+    .. plot::
+        :context: close-figs
+
+        >>> np.random.seed(5)
+        >>> x = np.cumsum(np.random.normal(loc=1, scale=5, size=50))
+        >>> s = pd.Series(x)
+        >>> s.plot()
+
+    A lag plot with ``lag=1`` returns
+
+    .. plot::
+        :context: close-figs
+
+        >>> pd.plotting.lag_plot(s, lag=1)
     """
     plot_backend = _get_plot_backend("matplotlib")
     return plot_backend.lag_plot(series=series, lag=lag, ax=ax, **kwds)
