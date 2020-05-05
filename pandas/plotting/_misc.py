@@ -358,13 +358,12 @@ def parallel_coordinates(
 
     Examples
     --------
-    >>> from matplotlib import pyplot as plt
-    >>> df = pd.read_csv('https://raw.github.com/pandas-dev/pandas/master'
-                        '/pandas/tests/data/iris.csv')
-    >>> pd.plotting.parallel_coordinates(
-            df, 'Name',
-            color=('#556270', '#4ECDC4', '#C7F464'))
-    >>> plt.show()
+
+    .. plot::
+        :context: close-figs
+
+        >>> df = pd.read_csv('https://raw.github.com/pandas-dev/pandas/master/pandas/tests/data/iris.csv')
+        >>> pd.plotting.parallel_coordinates(df, 'Name', color=('#556270', '#4ECDC4', '#C7F464'))
     """
     plot_backend = _get_plot_backend("matplotlib")
     return plot_backend.parallel_coordinates(
